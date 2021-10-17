@@ -1,17 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import Textform from './components/Textform';
 import React, { useState } from 'react';
 
 // React Router
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -44,21 +44,22 @@ function App() {
   }
   return (
     <>
-      {/* <Navbar title = "TextUtilse" aboutText ="About Text"/> */}
-      {/* <Router> */}
+      {/* <div> */}
+      {/* <Navbar title = "TextUtilse" aboutText ="About Text"/>  */}
+      <Router>
       <Navbar title="TextUtilse" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-        {/* <Switch>
+        <Switch>
           <Route exact path="/About">
-            <About />
+            <About mode = {mode}/>
           </Route>
-          <Route exact path="/"> */}
-        <Textform showAlert = {showAlert} heading="Enter the text to analyze below"  mode = {mode} />
-          {/* </Route> */}
-        {/* </Switch> */}
+          <Route exact path="/"> 
+        <Textform showAlert = {showAlert} heading="TextUtils- Word Counter, Character Counter, Remove Extra Spaces"  mode = {mode} />
+          </Route>
+        </Switch>
       </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
